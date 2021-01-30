@@ -52,14 +52,11 @@ function tuHe8sang10(n) {
   }
   return kq;
 }
-function tuHe8sang2(n) {
-  n = tuHe8sang10(n);
-  
-  return n;
-}
+
 function tuHe8sang2(n){
   n = tuHe8sang10(n);
   n = tuHe10sang2(n);
+  return n;
 }
 
 function main(input) {
