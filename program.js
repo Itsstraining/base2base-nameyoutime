@@ -17,15 +17,24 @@ function tuHe10sang2(n) {
       break;
     }
   }
-  // console.log(temp);
-  
-  for(let i = 1;i<=temp.length;i++){
-    temp1.push(temp[temp.length-i])
+  for (let i = 1; i <= temp.length; i++) {
+    temp1.push(temp[temp.length - i]);
   }
-  for(let i =0;i<temp1.length;i++){
-    kq = kq +temp1[i];
+  for (let i = 0; i < temp1.length; i++) {
+    kq = kq + temp1[i];
   }
-  console.log(kq);
+  return kq;
+}
+
+function tuHe8sang10(n) {
+  let kq = 0;
+  let i = 0;
+  while (n != 0) {
+    kq = kq + Math.floor(n % 10) * Math.pow(8, i);
+    i++;
+    n /= 10;
+  }
+  return kq;
 }
 
 function main(input) {
@@ -38,9 +47,12 @@ function main(input) {
   let y = parseInt(res[2]);
 
   if (x == 10 && y == 2) {
-    tuHe10sang2(n);
+    console.log(tuHe10sang2(n));
   }
- 
+  //1024
+  else if (x == 8 && y == 10) {
+    console.log(tuHe8sang10(n));
+  }
 
   // console.log(n + " " + x + " " + y);
 }
