@@ -17,7 +17,7 @@ function tuHe10sang2(n) {
       break;
     }
   }
-  console.log(temp);
+  // console.log(temp);
   
   for(let i = 1;i<=temp.length;i++){
     temp1.push(temp[temp.length-i])
