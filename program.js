@@ -36,6 +36,11 @@ function tuHe8sang10(n) {
   }
   return kq;
 }
+function tuHe8sang2(n){
+  n=tuHe8sang10(n);
+  n = tuHe10sang2(n);
+  return n;
+}
 
 function main(input) {
   // Your code goes here
@@ -52,6 +57,9 @@ function main(input) {
   //1024
   else if (x == 8 && y == 10) {
     console.log(tuHe8sang10(n));
+  }
+  else if (x==8 && y==2){
+    console.log(tuHe8sang2(n))
   }
 
   // console.log(n + " " + x + " " + y);
