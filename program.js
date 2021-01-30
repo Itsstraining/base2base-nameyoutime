@@ -26,6 +26,22 @@ function tuHe10sang2(n) {
   return kq;
 }
 
+function tuHe10sang16(n) {
+  let so = "0123456789ABCDEF";
+  let kq = "";
+  while (n > 0) {
+      let temp = Math.floor(n % 16);
+      kq = so.charAt(temp) + kq;
+      n = Math.floor(n / 16);
+  }
+  return kq;
+}
+function tuHe8sang16(n){
+  n = tuHe8sang10(n);
+  n = tuHe10sang16(n);
+  return n;
+}
+
 function tuHe8sang10(n) {
   let kq = 0;
   let i = 0;
@@ -51,13 +67,14 @@ function main(input) {
   let x = parseInt(res[1]);
   let y = parseInt(res[2]);
 
-  if (x == 10 && y == 2) {
-    console.log(tuHe10sang2(n));
-  } else if (x == 8 && y == 10) {
-    console.log(tuHe8sang10(n));
-  } else if (x == 8 && y == 2) {
-    console.log(tuHe8sang2(n));
-  }
+  // if (x == 10 && y == 2) {
+  //   console.log(tuHe10sang2(n));
+  // } else if (x == 8 && y == 10) {
+  //   console.log(tuHe8sang10(n));
+  // } else if (x == 8 && y == 2) {
+  //   console.log(tuHe8sang2(n));
+  // }
+  console.log(tuHe8sang16(n))
 
   // console.log(n + " " + x + " " + y);
 }
