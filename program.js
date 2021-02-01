@@ -26,6 +26,31 @@ function tuHe10sang2(n) {
   return kq;
 }
 
+function tuHe2sang10(n) {
+  let temp = [];
+  let temp1 = [];
+  n = n.toString();
+  let length = n.length;
+  let kq = 0;
+  for (let i = 0; i < length; i++) {
+    // temp.push(charAt(i));
+    temp.push(n.charAt(i));
+  }
+  for (let i = 0; i < temp.length; i++) {
+    temp1.push(parseInt(temp[temp.length - (1 + i)]));
+  }
+
+  for (let j = 0; j < temp1.length; j++) {
+    kq = kq + temp1[j] * Math.pow(2, j);
+  }
+  console.log(temp1);
+
+  return kq;
+  // for (let i = 0; i < array.length; i++) {
+
+  // }
+}
+
 function tuHe10sang16(n) {
   let so = "0123456789ABCDEF";
   let kq = "";
@@ -35,11 +60,6 @@ function tuHe10sang16(n) {
     n = Math.floor(n / 16);
   }
   return kq;
-}
-function tuHe8sang16(n) {
-  n = tuHe8sang10(n);
-  n = tuHe10sang16(n);
-  return n;
 }
 
 function tuHe8sang10(n) {
@@ -52,8 +72,12 @@ function tuHe8sang10(n) {
   }
   return kq;
 }
-
-function tuHe8sang2(n){
+function tuHe8sang16(n) {
+  n = tuHe8sang10(n);
+  n = tuHe10sang16(n);
+  return n;
+}
+function tuHe8sang2(n) {
   n = tuHe8sang10(n);
   n = tuHe10sang2(n);
   return n;
@@ -76,6 +100,8 @@ function main(input) {
     console.log(tuHe8sang2(n));
   } else if (x == 8 && y == 16) {
     console.log(tuHe8sang16(n));
+  } else if (x == 2 && y == 10) {
+    console.log(tuHe2sang10(n));
   }
 
   // console.log(n + " " + x + " " + y);
