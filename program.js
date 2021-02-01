@@ -33,22 +33,15 @@ function tuHe2sang10(n) {
   let length = n.length;
   let kq = 0;
   for (let i = 0; i < length; i++) {
-    // temp.push(charAt(i));
     temp.push(n.charAt(i));
   }
   for (let i = 0; i < temp.length; i++) {
-    temp1.push(parseInt(temp[temp.length - (1 + i)]));
+    temp1.push(parseInt(temp[i]));
   }
-
   for (let j = 0; j < temp1.length; j++) {
-    kq = kq + temp1[j] * Math.pow(2, j);
+    kq = kq + temp1[temp1.length - (1 + j)] * Math.pow(2, j);
   }
-  console.log(temp1);
-
   return kq;
-  // for (let i = 0; i < array.length; i++) {
-
-  // }
 }
 
 function tuHe10sang16(n) {
@@ -71,6 +64,12 @@ function tuHe8sang10(n) {
     n /= 10;
   }
   return kq;
+}
+
+function tuHe2sang16(n) {
+  n = tuHe2sang10(n);
+  n = tuHe10sang16(n);
+  return n;
 }
 function tuHe8sang16(n) {
   n = tuHe8sang10(n);
@@ -102,6 +101,8 @@ function main(input) {
     console.log(tuHe8sang16(n));
   } else if (x == 2 && y == 10) {
     console.log(tuHe2sang10(n));
+  } else if (x == 2 && y == 16) {
+    console.log(tuHe2sang16(n));
   }
 
   // console.log(n + " " + x + " " + y);
